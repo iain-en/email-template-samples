@@ -107,11 +107,20 @@
         .en__pad {
         	padding: 20px;
         }
-        .en__image {
+        .en__image img {
         	display: block;
         }        
-        .en__image--hero {
-        	width: 100%; /* (outlook uses width attribute on image instead) */
+
+/* 
+	Image notes:
+ 		Outlook uses width/height attribute on image instead, so that's set on the element as a fallback
+
+ 		hero image width and height are !important because our image editors set an inline width and height styles we want to override
+*/
+
+        .en__image--hero img {
+        	width: 100% !important;
+        	height: auto !important;
         	display: block;
         }
         p,
@@ -130,8 +139,14 @@
         h2 {
         	color: #aa2a2a;
         }
-        .en__button a {
+
+
+        .en__button__table td {
+        	/* bgcolor is on the element so users can edit */
         	padding:15px 25px;
+        }
+
+        .en__button a {
         	font-size: 20px;
         	display:block;
         	cursor:pointer;
@@ -218,8 +233,8 @@
 					        		<tr>
 					        			<td align="center" valign="top">
 					        				<!-- Element: hero header image -->
-							        		<div class="en__component en__component--imageblock">
-							        			<img class="en__image en__image--hero" width="640" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llamabanner.png?v=1510061057000" />
+							        		<div class="en__component en__component--imageblock en__image en__image--hero">
+							        			<img class="" width="640" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llamabanner.png?v=1510061057000" />
 							        		</div>
 							        		<!-- /Element: hero header image -->
 							        	</td>
@@ -243,8 +258,8 @@
 					        			<td class="en__pad" align="left">
 
 					        				<!-- Element: left align image -->
-					        				<div class="en__component en__component--imageblock">
-					        					<img class="en__image" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/logo.png?v=1510067197000" />
+					        				<div class="en__component en__component--imageblock en__image">
+					        					<img src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/logo.png?v=1510067197000" />
 					        				</div>
 					        				<!-- /Element: left align image -->
 
@@ -256,8 +271,8 @@
 					        				<!-- /Element: intro -->
 
 					        				<!-- Element: full width image -->
-					        				<div class="en__component en__component--imageblock">
-					        					<img class="en__image en__image--hero" width="600" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llamabanner.png?v=1510061057000" />
+					        				<div class="en__component en__component--imageblock en__image en__image--hero">
+					        					<img width="600" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llamabanner.png?v=1510061057000" />
 					        				</div>
 											<!-- /Element: full width image -->
 
@@ -276,7 +291,7 @@
 						        				<tr>
 						        					<td align="center">
 								        				<div class="en__component en__component--textblock">
-									        				<table border="0" cellspacing="0" cellpadding="0">
+									        				<table class="en__button__table" border="0" cellspacing="0" cellpadding="0">
 									        					<tr>
 									        						<td bgcolor="#aa2a2a" style="border-radius:6px;">
 												        				<a style="color: #ffffff;text-decoration:none" href="http://engagingnetworks.net">Take Action Now!</a>
@@ -292,9 +307,9 @@
 					        				<!-- Element: article -->
 					        				<table class="en__article" border="0" cellspacing="0" cellpadding="0" width="100%">
 					        					<tr>
-								        			<td class="en__article__left" valign="center" align="center">
-										        		<div class="en__component en__component--imageblock">
-										        			<img class="en__image en__image--article" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llama.png?v=1510061054000" />
+								        			<td class="en__article__left" valign="top" align="center">
+										        		<div class="en__component en__component--imageblock en__image en__image--article">
+										        			<img src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/llama.png?v=1510061054000" />
 										        		</div>
 										        	</td>
 										        	<td class="en__article__spacer" ></td>
@@ -326,8 +341,8 @@
 													<td class="en__article__spacer"></td>
 													<td class="en__article__left" style="vertical-align: top">
 														<!-- image content -->
-														<div class="en__component en__component--imageblock" style="margin: 16px 0">
-															<img class="en__image en__image--article" src="https://4cd6f2e339376b3ae91e-d5fe658129b293ecb157ab49ddd83630.ssl.cf5.rackcdn.com/1/llama-med.jpg?v=1510166495000" />
+														<div class="en__component en__component--imageblock en__image en__image--article" style="margin: 16px 0">
+															<img src="https://4cd6f2e339376b3ae91e-d5fe658129b293ecb157ab49ddd83630.ssl.cf5.rackcdn.com/1/llama-med.jpg?v=1510166495000" />
 														</div>
 													</td>
 												</tr>
@@ -355,15 +370,15 @@
 					        			<td class="en__pad" align="center">
 										
 					        				<!-- Element: footer image -->
-					        				<div class="en__component en__component--imageblock">
-							        			<img class="en__image" src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/logo.png?v=1510067197000" />
+					        				<div class="en__component en__component--imageblock en__image">
+							        			<img src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1757/logo.png?v=1510067197000" />
 							        		</div>
 							        		<!-- /Element: footer image -->
 
 							        		<!-- Element: footer signature -->
 							        		<div class="en__component en__component--textblock">
 							        			<p>Mauris quis posuere massa. Curabitur suscipit suscipit rutrum. Vestibulum a consequat lorem. Mauris consequat nunc erat, id molestie purus venenatis eu. Pellentesque ullamcorper condimentum scelerisque.</p>
-							        			<p><a href="http://engagingnetworks.net?vib=true">View in Browser</a> | <a href="http://engagingnetworks.net?unsub=true">Unsubscribe</a></p>
+							        			<p><a href="{view_in_browser_url}">View in Browser</a> | <a>Unsubscribe</a></p>
 							        		</div>
 							        		<!-- /Element: footer signature -->
 
