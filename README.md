@@ -2,7 +2,7 @@
 
 Resources for creating our default sample HTML templates. Building samples from common elements in the "includes" folder means we don't have to update individual samples every time we tweak something.
 
-Grunt script processes HTML files in "src", inserting included HTML elements from the "includes" folder and places output in "build". The contents of "build" can then be uploaded as email samples.
+The grunt script processes HTML files in "src", inserting included HTML elements from the "includes" folder and places output in "build". The contents of "build" can then be uploaded as email samples.
 
 Email samples must be sent using the CSS inliner!
 
