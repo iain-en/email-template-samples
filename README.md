@@ -35,3 +35,10 @@ A master template containing the basic header and wrapping HTML for our template
 - footer image
 - footer signature
 
+## Usage
+1. Install node, download the repo and run `npm install`
+2. Make your changes to the "src" or "includes" files. Any html files added to "src" will be processed automatically.
+3. Run `grunt`
+4. Use files generated in "build" to update samples
+5. Sync any finalised and tested changes back to the repo
+
