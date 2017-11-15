@@ -40,5 +40,5 @@ A master template containing the basic header and wrapping HTML for our template
 2. Make your changes to the "src" or "includes" files. Any html files added to "src" will be processed automatically.
 3. Run `grunt`
 4. Use files generated in "build" to update samples
-5. Sync any finalised and tested changes back to the repo
+5. Sync any finalised and tested changes back to github INCLUDING built files.
 
